@@ -1,3 +1,5 @@
+import decomposition.Decomposition;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -5,8 +7,11 @@ public class Main {
 //Branching branching=new Branching();
 //branching.brick();
 
-        double a=2.3;
+//        Decomposition decomposition= new Decomposition(20,40,50,70);
+//        System.out.println(decomposition.distanceOfDot()) ;
+    Integer[] a={12,3,4};
+    Integer[] b=a.clone();
 
-        System.out.println(a/0);
+
     }
 }
