@@ -1,4 +1,4 @@
-import decomposition.Decomposition;
+import Strings_and_basics_of_text_processing.StringsBasics;
 
 public class Main {
 
@@ -9,8 +9,8 @@ public class Main {
 
 //        Decomposition decomposition= new Decomposition(20,40,50,70);
 //        System.out.println(decomposition.distanceOfDot()) ;
-    Integer[] a={12,3,4};
-    Integer[] b=a.clone();
+        StringsBasics str=new StringsBasics();
+        str.CountOfNumbers();
 
 
     }
