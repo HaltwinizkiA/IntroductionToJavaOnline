@@ -10,8 +10,7 @@ public class Main {
 //        Decomposition decomposition= new Decomposition(20,40,50,70);
 //        System.out.println(decomposition.distanceOfDot()) ;
         StringsBasics str=new StringsBasics();
-        str.CountOfNumbers();
-
+        str.punctuationMarks();
 
     }
 }
