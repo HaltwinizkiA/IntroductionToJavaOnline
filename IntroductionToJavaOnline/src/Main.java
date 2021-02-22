@@ -1,4 +1,4 @@
-import Strings_and_basics_of_text_processing.StringsBasics;
+import app.App;
 
 public class Main {
 
@@ -6,11 +6,12 @@ public class Main {
 
 //Branching branching=new Branching();
 //branching.brick();
-
-//        Decomposition decomposition= new Decomposition(20,40,50,70);
-//        System.out.println(decomposition.distanceOfDot()) ;
-        StringsBasics str=new StringsBasics();
-        str.punctuationMarks();
+//
+//        Decomposition decomposition = new Decomposition(20, 40, 50, 70);
+//        System.out.println(decomposition.distanceOfDot());
+        App app = new App();
+        app.inicialization();
 
     }
+
 }
