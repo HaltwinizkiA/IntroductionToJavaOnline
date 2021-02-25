@@ -1,0 +1,80 @@
+package analyzer;
+
+import analyzer.tag.Tag;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Analyzer {
+    static String text = "<notes>\n" +
+            " <note id = \"1\">\n" +
+            " <to>Вася</to>\n" +
+            " <from>Света</from>\n" +
+            " <heading>Напоминание</heading>\n" +
+            " <body>Позвони мне завтра!</body>\n" +
+            " </note>\n" +
+            " <note id = \"2\">\n" +
+            " <to>Петя</to>\n" +
+            " <from>Маша</from>\n" +
+            " <heading>Важное напоминание</heading>\n" +
+            " <body/>\n" +
+            " </note>\n" +
+            "</notes>\n";
+
+    //   \<[^>]+\> - рега для поиска внутри <>
+    public void initialization() {
+
+
+    }
+
+    public void analyzer() {
+
+        Matcher countOfTag = Pattern.compile("/").matcher(text);
+
+        Tag[] tag = new Tag[(int) countOfTag.results().count()];
+        Matcher searchTag = Pattern.compile("(?<=\\<)(.*?)(?=\\>)").matcher(text);
+        String[] str;
+        int i = 0;
+        while (searchTag.find()) {
+
+            String openTag = searchTag.group();//поиск тега
+            Matcher chekOpen = Pattern.compile("^/").matcher(openTag);
+            if (chekOpen.find()) {
+                continue;
+            }//проверка на закрывающий;
+            Matcher emptyTag = Pattern.compile("/$").matcher(openTag);
+            if (emptyTag.find()) {
+                tag[i] = new Tag("empty tag: " +" <"+ openTag+">", "empty", "empty");
+                i++;
+                continue;
+            }// проверка на пустой
+            String closeTag = "/" + openTag;
+            str = text.split("<" + openTag + ">");
+
+            Matcher matchClose = Pattern.compile(closeTag).matcher(str[1]);
+            if (matchClose.find())//поиск его конца
+            {
+                closeTag = matchClose.group();
+            }
+            Matcher chekingId = Pattern.compile("\\d").matcher(openTag);
+            if (chekingId.find()) {
+                closeTag=closeTag.substring(0,closeTag.indexOf(" "));
+            }//костыль проверка на цифры в теге
+            openTag="<"+openTag+">";
+            closeTag="<"+closeTag+">";
+
+            str = str[1].split( closeTag );//вырезание тела)
+            tag[i] = new Tag("OPEN TAG : " + openTag, " BODY : " + str[0], " CLOSED TAG : " + closeTag);
+            i++;
+
+
+        }
+        for (int f = 0; f < tag.length; f++) {
+            System.out.println("UNIT NUM : " + f + " " + tag[f].getOpen() + tag[f].getBody() + tag[f].getClose() + "\n");
+        }//вывод;
+
+    }
+}
+
+
+

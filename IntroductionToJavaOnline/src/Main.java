@@ -1,4 +1,4 @@
-import app.App;
+import analyzer.Analyzer;
 
 public class Main {
 
@@ -9,8 +9,9 @@ public class Main {
 //
 //        Decomposition decomposition = new Decomposition(20, 40, 50, 70);
 //        System.out.println(decomposition.distanceOfDot());
-        App app = new App();
-        app.inicialization();
+
+        Analyzer analyzer=new Analyzer();
+        analyzer.analyzer();
 
     }
 
