@@ -1,6 +1,6 @@
-package analyzer;
+package Strings_and_basics_of_text_processing.analyzer;
 
-import analyzer.tag.Tag;
+import Strings_and_basics_of_text_processing.analyzer.tag.Tag;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,14 +32,20 @@ public class Analyzer {
         Matcher countOfTag = Pattern.compile("/").matcher(text);
 
         Tag[] tag = new Tag[(int) countOfTag.results().count()];
-        Matcher searchTag = Pattern.compile("(?<=\\<)(.*?)(?=\\>)").matcher(text);
-        String[] str;
+
+        String str=text;
+        Matcher searchTag = Pattern.compile("(?<=\\<)(.*?)(?=\\>)").matcher(str);
+
         int i = 0;
         while (searchTag.find()) {
-
+            StringBuffer buffer =new StringBuffer();//для восстановления строки в случае повторения тэга и разбития на строки
+            String[] newtext;//для хранения сплитанных строк
             String openTag = searchTag.group();//поиск тега
-            Matcher chekOpen = Pattern.compile("^/").matcher(openTag);
-            if (chekOpen.find()) {
+            Matcher chekClosed = Pattern.compile("^/").matcher(openTag);
+            if (chekClosed.find()) {
+                Matcher replace=Pattern.compile("</"+openTag+">").matcher(str);
+
+
                 continue;
             }//проверка на закрывающий;
             Matcher emptyTag = Pattern.compile("/$").matcher(openTag);
@@ -49,9 +55,9 @@ public class Analyzer {
                 continue;
             }// проверка на пустой
             String closeTag = "/" + openTag;
-            str = text.split("<" + openTag + ">");
+            newtext = str.split("<" + openTag + ">");
 
-            Matcher matchClose = Pattern.compile(closeTag).matcher(str[1]);
+            Matcher matchClose = Pattern.compile(closeTag).matcher(newtext[1]);
             if (matchClose.find())//поиск его конца
             {
                 closeTag = matchClose.group();
@@ -63,18 +69,20 @@ public class Analyzer {
             openTag="<"+openTag+">";
             closeTag="<"+closeTag+">";
 
-            str = str[1].split( closeTag );//вырезание тела)
-            tag[i] = new Tag("OPEN TAG : " + openTag, " BODY : " + str[0], " CLOSED TAG : " + closeTag);
+            newtext = newtext[1].split( closeTag );//вырезание тела)
+            tag[i] = new Tag("OPEN TAG : " + openTag, " BODY : " + newtext[0], " CLOSED TAG : " + closeTag);
             i++;
 
 
         }
         for (int f = 0; f < tag.length; f++) {
-            System.out.println("UNIT NUM : " + f + " " + tag[f].getOpen() + tag[f].getBody() + tag[f].getClose() + "\n");
+            System.out.println("UNIT NUM : " + (f+1) + " " + tag[f].getOpen() + tag[f].getBody() + tag[f].getClose() + "\n");
         }//вывод;
 
     }
 }
-
+//Напишите анализатор, позволяющий последовательно возвращать содержимое узлов xml-документа и его тип (открывающий
+//тег, закрывающий тег, содержимое тега, тег без тела). Пользоваться готовыми парсерами XML для решения данной задачи
+//нельзя.
 
 

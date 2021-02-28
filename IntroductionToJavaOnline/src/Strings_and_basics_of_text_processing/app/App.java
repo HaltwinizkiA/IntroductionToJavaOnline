@@ -1,4 +1,4 @@
-package app;
+package Strings_and_basics_of_text_processing.app;
 
 import java.util.Arrays;
 import java.util.Comparator;

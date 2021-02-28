@@ -1,3 +1,5 @@
+package algoritmization;
+
 import java.util.Scanner;
 
 public class Branching {

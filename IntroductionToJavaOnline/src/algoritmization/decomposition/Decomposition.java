@@ -1,4 +1,4 @@
-package decomposition;
+package algoritmization.decomposition;
 
 import java.util.Scanner;
 
