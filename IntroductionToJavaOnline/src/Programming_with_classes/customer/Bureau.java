@@ -1,4 +1,4 @@
-package Programming_with_classes;
+package Programming_with_classes.customer;
 
 import java.util.Arrays;
 import java.util.Comparator;

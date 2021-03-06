@@ -1,4 +1,4 @@
-package Programming_with_classes;
+package Programming_with_classes.customer;
 
 public class Customer {
     String name=" ";

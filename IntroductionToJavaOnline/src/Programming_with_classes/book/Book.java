@@ -1,4 +1,4 @@
-package Programming_with_classes;
+package Programming_with_classes.book;
 
 public class Book {
     int id;

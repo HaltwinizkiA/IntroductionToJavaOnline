@@ -1,4 +1,4 @@
-package Programming_with_classes;
+package Programming_with_classes.book;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
