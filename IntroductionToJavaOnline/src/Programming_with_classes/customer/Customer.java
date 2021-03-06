@@ -1,12 +1,12 @@
 package Programming_with_classes.customer;
 
 public class Customer {
-    String name=" ";
-    String surName=" ";
-    String patronymic=" ";
-    String adress=" ";
-    int cardNum=0;
-    int bankNum=0;
+    String name = " ";
+    String surName = " ";
+    String patronymic = " ";
+    String adress = " ";
+    int cardNum = 0;
+    int bankNum = 0;
 
     public String getName() {
         return name;
@@ -45,11 +45,11 @@ public class Customer {
     }
 
     public void setCardNum(int cardNum) {
-        String a= String.valueOf(cardNum);
+        String a = String.valueOf(cardNum);
         do {
             System.out.println("Number length -6");
-        }while (!(a.length()==6));
-         this.cardNum = cardNum;
+        } while (!(a.length() == 6));
+        this.cardNum = cardNum;
 
     }
 
@@ -73,7 +73,6 @@ public class Customer {
                 '}';
     }
 }
-
 
 
 //8. Создать класс Customer, спецификация которого приведена ниже. Определить конструкторы, set- и get- методы

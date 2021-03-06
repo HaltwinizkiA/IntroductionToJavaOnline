@@ -1,22 +1,11 @@
 package Programming_with_classes.airline;
 
 public class Airline {
-    double time=0;
-    int num=0;
-    String type=" ";
-    String dayOfWeek=" ";
-    String destination=" ";
-
-    @Override
-    public String toString() {
-        return "Airline{" +
-                "time='" + time + '\'' +
-                ", num=" + num +
-                ", type='" + type + '\'' +
-                ", dayOfWeek='" + dayOfWeek + '\'' +
-                ", destination='" + destination + '\'' +
-                '}';
-    }
+    double time = 0;
+    int num = 0;
+    String type = " ";
+    String dayOfWeek = " ";
+    String destination = " ";
 
     public Airline() {
     }
@@ -27,6 +16,17 @@ public class Airline {
         this.type = type;
         this.dayOfWeek = dayOfWeek;
         this.destination = destination;
+    }
+
+    @Override
+    public String toString() {
+        return "Airline{" +
+                "time='" + time + '\'' +
+                ", num=" + num +
+                ", type='" + type + '\'' +
+                ", dayOfWeek='" + dayOfWeek + '\'' +
+                ", destination='" + destination + '\'' +
+                '}';
     }
 
     public double getTime() {

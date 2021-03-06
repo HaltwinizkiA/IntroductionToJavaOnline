@@ -1,13 +1,13 @@
-import Programming_with_classes.text.Text;
+import Programming_with_classes.car.Car;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
-        Text text=new Text();
-        text.getComposition();
-
+        Car car=new Car();
+       car=car.getcar();
+        System.out.println(car);
 
 
 

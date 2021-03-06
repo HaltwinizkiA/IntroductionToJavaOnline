@@ -8,6 +8,6 @@ public class Sentence implements CompositionOfText {
         System.out.println("enter sentence");
 
 
-        return  " "+scanner.next()+scanner.nextLine()+".";
+        return " " + scanner.next() + scanner.nextLine() + ".";
     }
 }

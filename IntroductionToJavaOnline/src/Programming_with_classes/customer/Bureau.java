@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class Bureau {
     int count;
-    Customer[] customer=new Customer[3];
+    Customer[] customer = new Customer[3];
+
     public Bureau(int count) {
         this.count = count;
     }
@@ -32,9 +33,9 @@ public class Bureau {
 //
 //        }
 
-        customer[0]=new Customer();
-        customer[1]=new Customer();
-        customer[2]=new Customer();
+        customer[0] = new Customer();
+        customer[1] = new Customer();
+        customer[2] = new Customer();
         customer[0].setName("sasha");
         customer[0].setSurName("goltv");
         customer[0].setPatronymic("anatol");
@@ -53,34 +54,36 @@ public class Bureau {
         customer[2].setAdress("popa");
         customer[2].setBankNum(15135);
         customer[2].setCardNum(234234);
-        customer=sortSurname(customer);
+        customer = sortSurname(customer);
 
         outCustomer();
     }
-    public Customer[] sortSurname(Customer[] c){
-        Arrays.sort(c,new SortAplh());
+
+    public Customer[] sortSurname(Customer[] c) {
+        Arrays.sort(c, new SortAplh());
         return c;
     }
 
 
-    public boolean checkInterval(int c,int start, int end) {
-        boolean check=false;
+    public boolean checkInterval(int c, int start, int end) {
+        boolean check = false;
 
-          if (c>=start&c<=end){
-                check=true;
-          }
-          return check;
+        if (c >= start & c <= end) {
+            check = true;
         }
-    public void outCustomer(){
-        System.out.println("enter start end interval");
-        Scanner scanner=new Scanner(System.in);
-        System.out.println("enter start");
-        int start=scanner.nextInt();
-        System.out.println("enter end");
-        int end=scanner.nextInt();
-        for (Customer el:customer) {
+        return check;
+    }
 
-            if(checkInterval(el.getCardNum(),start,end)){
+    public void outCustomer() {
+        System.out.println("enter start end interval");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter start");
+        int start = scanner.nextInt();
+        System.out.println("enter end");
+        int end = scanner.nextInt();
+        for (Customer el : customer) {
+
+            if (checkInterval(el.getCardNum(), start, end)) {
                 System.out.println(el);
             }
 
@@ -88,7 +91,6 @@ public class Bureau {
 
 
     }
-
 
 
     class SortAplh implements Comparator<Customer> {

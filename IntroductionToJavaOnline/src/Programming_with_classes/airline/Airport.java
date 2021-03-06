@@ -22,8 +22,8 @@ public class Airport {
 //                airlines[i].setNum();
 //                airlines[i].setType();
         airlines = new Airline[4];
-        for (int i=0;i<airlines.length;i++){
-            airlines[i]=new Airline();
+        for (int i = 0; i < airlines.length; i++) {
+            airlines[i] = new Airline();
 
         }
 
@@ -47,7 +47,7 @@ public class Airport {
         airlines[3].setTime(20.00);
         airlines[3].setNum(4);
         airlines[3].setType("carton");
-        for (Airline a:airlines){
+        for (Airline a : airlines) {
             System.out.println(a);
         }
         System.out.println("choose metod:\n 1-list of flights for a given destination;\n 2-list of flights for a given day of the week;" +
@@ -104,9 +104,9 @@ public class Airport {
         System.out.println("enter time in formant /hours,min/  : ");
         double time = scanner.nextDouble();
         ArrayList<Airline> cache = new ArrayList<Airline>();
-        for (Airline as:a){
-            if (as.getTime()>time){
-                System.out.println("after "+time);
+        for (Airline as : a) {
+            if (as.getTime() > time) {
+                System.out.println("after " + time);
                 cache.add(as);
                 System.out.println(as);
             }
