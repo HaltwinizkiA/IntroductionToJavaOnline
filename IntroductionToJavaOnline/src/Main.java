@@ -1,11 +1,11 @@
-import Programming_with_classes.bank.Bank;
+import Programming_with_classes.tour_agency.Agency;
 
 public class Main {
 
     public static void main(String[] args) {
-        Bank bank=new Bank();
-        bank.createBank();
 
+        Agency agency=new Agency();
+        agency.initialization();
 
 
 
