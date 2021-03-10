@@ -10,32 +10,32 @@ public class Agency {
     Place[] places = Place.values();
     Scanner scanner = new Scanner(System.in);
     TravelVoucher voucher;
-    public void initialization(){
-        TravelVoucher[] vouchers= createVouch();
+
+    public void initialization() {
+        TravelVoucher[] vouchers = createVouch();
         outPutVouch(vouchers);
         System.out.println("enter 1-sort, 2 choose");
-        switch (scanner.nextInt()){
-            case 1-> {
+        switch (scanner.nextInt()) {
+            case 1 -> {
                 sortVoucher(vouchers);
-                voucher=chooseVoucher(vouchers);
+                voucher = chooseVoucher(vouchers);
             }
-            case 2->voucher=chooseVoucher(vouchers);
+            case 2 -> voucher = chooseVoucher(vouchers);
         }
         System.out.println(voucher);
         chooseCountOfDay(voucher);
         chooseTransport(voucher);
         chooseFeeding(voucher);
-        System.out.println("you Travel : "+voucher);
+        System.out.println("you Travel : " + voucher);
 
     }
 
-public void outPutVouch(TravelVoucher[] vouchers){
-    for (int i=0;i<vouchers.length;i++){
-        System.out.println(i+" : "+vouchers[i]);
+    public void outPutVouch(TravelVoucher[] vouchers) {
+        for (int i = 0; i < vouchers.length; i++) {
+            System.out.println(i + " : " + vouchers[i]);
+        }
+
     }
-
-}
-
 
     public TravelVoucher[] createVouch() {
         int count = 9;
@@ -50,7 +50,8 @@ public void outPutVouch(TravelVoucher[] vouchers){
 
         return vouchers;
     }
-    public TravelVoucher chooseVoucher(TravelVoucher[] travelVouchers){
+
+    public TravelVoucher chooseVoucher(TravelVoucher[] travelVouchers) {
         System.out.println("\nchoose num of voucher");
         return travelVouchers[scanner.nextInt()];
     }
@@ -113,7 +114,7 @@ public void outPutVouch(TravelVoucher[] vouchers){
             if (String.valueOf(o1.type).compareTo(String.valueOf(o2.type)) > 0) {
                 return 1;
             }
-            if (String.valueOf(o1.type).compareTo(String.valueOf(o2.type))< 0) {
+            if (String.valueOf(o1.type).compareTo(String.valueOf(o2.type)) < 0) {
                 return -1;
             } else {
                 return 0;
