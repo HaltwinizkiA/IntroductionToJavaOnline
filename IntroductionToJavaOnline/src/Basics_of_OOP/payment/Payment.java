@@ -5,12 +5,12 @@ public class Payment {
     int totalPrice;
 
     public void buy(){
-        Product apple=new Product(2,12);
-        Product banana=new Product(1,4);
-        Product knife=new Product(15,1);
+        Product apple = new Product(2, 12);
+        Product banana = new Product(1, 4);
+        Product knife = new Product(15, 1);
 
 
-        products=new Product[]{apple,banana,knife};
+        products = new Product[]{apple,banana,knife};
         for (Product p:products){
             totalPrice+=p.price;
         }

@@ -1,7 +1,21 @@
 package dragon_treasures;
 
 public class DragonTreasures {
+    NameOfTreasure name;
+    int price=0;
 
+    public DragonTreasures(NameOfTreasure name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "DragonTreasures{" +
+                "name=" + name +
+                ", price=" + price +
+                '}';
+    }
 }
 //Задача 4.
 //Создать консольное приложение, удовлетворяющее следующим требованиям:
@@ -12,6 +26,7 @@ public class DragonTreasures {
 //• Классы должны быть грамотно разложены по пакетам.
 //• Консольное меню должно быть минимальным.
 //• Для хранения данных можно использовать файлы.
+
 //Дракон и его сокровища. Создать программу, позволяющую обрабатывать сведения о 100 сокровищах в пещере
 //дракона. Реализовать возможность просмотра сокровищ, выбора самого дорогого по стоимости сокровища и
 //выбора сокровищ на заданную сумму.
