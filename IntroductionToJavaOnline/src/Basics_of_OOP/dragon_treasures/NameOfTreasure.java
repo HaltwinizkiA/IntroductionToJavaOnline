@@ -1,4 +1,4 @@
-package dragon_treasures;
+package Basics_of_OOP.dragon_treasures;
 
 public enum NameOfTreasure {
     boots,

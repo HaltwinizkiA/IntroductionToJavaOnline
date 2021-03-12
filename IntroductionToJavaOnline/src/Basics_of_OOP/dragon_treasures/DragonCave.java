@@ -1,4 +1,4 @@
-package dragon_treasures;
+package Basics_of_OOP.dragon_treasures;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,14 +14,14 @@ public class DragonCave implements Comparator<DragonTreasures> {
         for (int i = 0; i < treasures.length; i++) {
             treasures[i] = new DragonTreasures(name[(int) (Math.random() * name.length)], (int) (Math.random() * 918) + 82);
         }
-        treasureViev(treasures);
+        treasureView(treasures);
         System.out.println("\n expensive :" + expensiveTreasure(treasures));
         treasures = choiceForAGivenAmount(treasures);
-        treasureViev(treasures);
+        treasureView(treasures);
         return treasures;
     }
 
-    public void treasureViev(DragonTreasures[] dragonTreasures) {
+    public void treasureView(DragonTreasures[] dragonTreasures) {
         for (DragonTreasures d : dragonTreasures) {
             System.out.println(d);
         }
