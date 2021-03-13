@@ -1,0 +1,5 @@
+cat;12;Electronic
+HarryPotter;24;Electronic
+Warcraft;45;Paper
+notBook;123;Paper
+Kislo;32;Electronic
