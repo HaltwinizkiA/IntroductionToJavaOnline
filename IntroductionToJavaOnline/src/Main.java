@@ -5,8 +5,10 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Library library=new Library();
-      library.inicialization();
+        Library library = new Library();
+//        String nm="guest";
+//        System.out.println(nm.hashCode());
+
     }
 
 }

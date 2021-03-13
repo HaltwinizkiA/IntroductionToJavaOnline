@@ -1,12 +1,9 @@
 package tasks.accounts;
 
-import tasks.service.impl.AccountServicesImpl;
+import tasks.service.impl.AccountService;
 
-public class User extends AccountServicesImpl {
-
- public void sendBook(){
+public class User extends AccountService {
 
 
- }
 }
 //login user pass guest322
