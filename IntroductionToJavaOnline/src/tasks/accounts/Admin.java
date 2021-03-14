@@ -44,13 +44,29 @@ public class Admin extends Account {
         Book book = null;
         System.out.println("enter name");
         String name = scanner.next();
-        System.out.println("enter num of page");
-        int num = scanner.nextInt();
+
+        int num = 0;
+
+        while (true) {
+
+            try {
+                System.out.println("enter num of page");
+                num = scanner.nextInt();
+                break;
+
+            } catch (Exception e) {
+                System.out.println("Error wrong num " + e);
+                scanner.nextLine();
+            }
+        }
+
         System.out.println("Choose  type 1-Paper or 2 - Electronic ");
+
         switch (scanner.nextInt()) {
             case 1 -> book = new Book(name, num, Type.Paper);
             case 2 -> book = new Book(name, num, Type.Electronic);
         }
+
         books.add(book);
         sendingNotifications(book);
         return books;
