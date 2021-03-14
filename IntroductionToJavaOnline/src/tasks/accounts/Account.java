@@ -80,6 +80,7 @@ public class Account {
         check = Integer.parseInt(authent[0]);
         if ((name.hashCode()) == check) {
             check = Integer.parseInt(authent[1]);
+            int a=password.hashCode();
             if (password.hashCode() == check) {
                 System.out.println("Hello " + authent[2] + "your permissions -user " + " name:");
                 return new User();
@@ -94,7 +95,7 @@ public class Account {
     }
 
     public void sendingNotifications(Book book) {
-        System.out.println("Book : " + book.toString() + "sent to :");
+        System.out.println("Book : " + book.toString() + "  sent to :");
         for (String mail : getUserMails()) {
             System.out.println(mail);
         }
@@ -117,13 +118,20 @@ public class Account {
         List<String> mails = null;
         mails = getAdminMails();
         for (int i = 0; i < mails.size(); i++) {
-            System.out.println("i: " + mails.get(i));
+            System.out.println(i + " " + mails.get(i));
 
         }
-        System.out.println("select admin mail");
+        boolean flag = true;
+        while (flag){
+            System.out.println("select admin mail");
         int select = scanner.nextInt();
-        System.out.println(book.toString() + "sent to - " + mails.get(select));
+        if (select>=mails.size()) {
+            System.out.println("wrong num");
+            continue;
 
+        }
+        System.out.println(book.toString() + " sent to : " + mails.get(select));
+    }
     }
 
     public List<String> getAdminMails() {
@@ -190,14 +198,21 @@ public class Account {
         System.out.println("book search\n" +
                 "Enter the title");
         String title = scanner.next();
+        boolean flag=true;
         Pattern pattern = Pattern.compile(title);
         for (int i = 0; i < books.size(); i++) {
             Book cache = books.get(i);
             Matcher matcher = pattern.matcher(cache.getName());
             if (matcher.find()) {
-                System.out.println(books.get(i).toString());
+                System.out.println("found");
+                System.out.println(i + " : Title: " + books.get(i).getName() + " Page: " + books.get(i).getCountOfPage() + " Type: " + books.get(i).getType());
+                flag=false;
+
             }
         }
+        if (flag){
+            System.out.println("no such book found");
+        };
 
     }
 

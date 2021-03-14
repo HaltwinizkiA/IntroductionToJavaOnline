@@ -4,3 +4,4 @@ Warcraft;45;Paper
 notBook;123;Paper
 Kislo;32;Electronic
 Zarya;123;Electronic
+Witcher;256;Electronic
