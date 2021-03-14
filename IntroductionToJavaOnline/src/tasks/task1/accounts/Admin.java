@@ -1,7 +1,7 @@
-package tasks.accounts;
+package tasks.task1.accounts;
 
-import tasks.book.Book;
-import tasks.book.Type;
+import tasks.task1.book.Book;
+import tasks.task1.book.Type;
 
 import java.util.List;
 import java.util.Scanner;
@@ -72,7 +72,7 @@ public class Admin extends Account {
         return books;
     }
 
-    private List<Book> deleteBook(List<tasks.book.Book> books) {
+    private List<Book> deleteBook(List<tasks.task1.book.Book> books) {
         System.out.println("choose num of book");
         int num = scanner.nextInt();
         books.remove(num);

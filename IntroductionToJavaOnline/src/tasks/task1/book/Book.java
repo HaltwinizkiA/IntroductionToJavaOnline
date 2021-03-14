@@ -1,4 +1,4 @@
-package tasks.book;
+package tasks.task1.book;
 
 public class Book {
     String name="";

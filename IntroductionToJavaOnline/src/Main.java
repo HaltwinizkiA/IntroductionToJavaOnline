@@ -1,4 +1,4 @@
-import tasks.library.Library;
+import tasks.task1.library.Library;
 
 import java.io.IOException;
 

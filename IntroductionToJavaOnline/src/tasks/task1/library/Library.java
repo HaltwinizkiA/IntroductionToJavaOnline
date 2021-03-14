@@ -1,7 +1,7 @@
-package tasks.library;
+package tasks.task1.library;
 
-import tasks.book.Book;
-import tasks.accounts.Account;
+import tasks.task1.book.Book;
+import tasks.task1.accounts.Account;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.List;
 public class Library {
     List<Book> books = new ArrayList<>();
 
-    File file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//library", "library.txt");
+    File file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task1//library", "library.txt");
 
     public Library() throws IOException {
         System.out.println("start library");

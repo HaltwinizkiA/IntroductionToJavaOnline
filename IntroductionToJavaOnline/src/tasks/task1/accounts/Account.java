@@ -1,7 +1,7 @@
-package tasks.accounts;
+package tasks.task1.accounts;
 
-import tasks.book.Book;
-import tasks.book.Type;
+import tasks.task1.book.Book;
+import tasks.task1.book.Type;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import java.util.regex.Pattern;
 
 public class Account {
 
-    File fileA = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//service", "admin.txt");
-    File fileU = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//service", "user.txt");
+    File fileA = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task1//service", "admin.txt");
+    File fileU = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task1//service", "user.txt");
 
     Scanner scanner = new Scanner(System.in);
 
