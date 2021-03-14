@@ -1,8 +1,6 @@
 package tasks.accounts;
 
-import tasks.service.impl.AccountService;
-
-public class User extends AccountService {
+public class User extends Account {
 
 
 }

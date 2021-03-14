@@ -1,7 +1,7 @@
 package tasks.library;
 
 import tasks.book.Book;
-import tasks.service.impl.AccountService;
+import tasks.accounts.Account;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class Library {
     public Library() throws IOException {
         System.out.println("start library");
         books = gettingBooksOutFile();
-        AccountService accountServices = new AccountService();
+        Account accountServices = new Account();
         accountServices = accountServices.entry();
         accountServices.menu(books);
         writingToFile(books);
@@ -74,3 +74,4 @@ public class Library {
 
 
 //cериализцаия.
+//

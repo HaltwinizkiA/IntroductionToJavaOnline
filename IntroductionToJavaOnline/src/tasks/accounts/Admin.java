@@ -2,12 +2,11 @@ package tasks.accounts;
 
 import tasks.book.Book;
 import tasks.book.Type;
-import tasks.service.impl.AccountService;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class Admin extends AccountService {
+public class Admin extends Account {
     Scanner scanner = new Scanner(System.in);
 
     public Admin() {
@@ -16,13 +15,12 @@ public class Admin extends AccountService {
     public void menu(List<Book> books) {
         boolean flag = true;
         while (flag) {
-            System.out.println("menu:\n1-View Library\n2-Search book\n3-send book\n4-modify Library\n9-for stop");
+            System.out.println("menu:\n1-View Library\n2-Search book\n3-modify Library\n9-for stop");
             int choose = scanner.nextInt();
             switch (choose) {
                 case 1 -> view(books);
                 case 2 -> search(books);
-//            case 3 -> sendBook();
-                case 4->modifyLibrary(books);
+                case 3 -> modifyLibrary(books);
                 case 9 -> flag = false;
             }
         }
@@ -54,6 +52,7 @@ public class Admin extends AccountService {
             case 2 -> book = new Book(name, num, Type.Electronic);
         }
         books.add(book);
+        sendingNotifications(book);
         return books;
     }
 
