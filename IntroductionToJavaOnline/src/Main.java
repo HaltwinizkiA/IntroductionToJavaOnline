@@ -7,7 +7,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ParseException {
         Notebook notebook=new Notebook();
-        notebook.initialization();
+        notebook.menu();
+
 //        Date date=new Date();
 //       long a=date.getTime();
 //
@@ -17,6 +18,8 @@ public class Main {
 //        String qwe="2012-12-01";
 //        String b="2012-12-01";
 //        System.out.println(qwe.equals(b));
+
+
 
 
 
