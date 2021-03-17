@@ -16,11 +16,10 @@ public class Notebook {
     Matcher matcher;
     File file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task2", "notebook.txt");
 
-   public void initialization() throws IOException {
+    public void initialization() throws IOException {
         readingNote();
         System.out.println("Hello user this is NOTEBOOKGOLDEDDISHION " + smile);
         menu();
-
 
 
         writingToFile(noteList);
@@ -29,23 +28,23 @@ public class Notebook {
     void menu() {
 
         int select;
-        boolean flag=true;
-        while (flag){
-        while (true) {
-           System.out.println("Select an action\n1-view all note\n2-search \n3-add Note\n4-for stop");
-           select = scanner.nextInt();
-           if(select<=4&select>=1){
-               break;
-           }
-        }
+        boolean flag = true;
+        while (flag) {
+            while (true) {
+                System.out.println("Select an action\n1-view all note\n2-search \n3-add Note\n4-for stop");
+                select = scanner.nextInt();
+                if (select <= 4 & select >= 1) {
+                    break;
+                }
+            }
 
-        switch (select) {
-            case 1 -> noteView(noteList);
-            case 2->search();
-            case 3->addNote();
-            case 4->flag=false;
+            switch (select) {
+                case 1 -> noteView(noteList);
+                case 2 -> search();
+                case 3 -> addNote();
+                case 4 -> flag = false;
 
-        }
+            }
         }
     }
 
@@ -55,7 +54,7 @@ public class Notebook {
         BufferedReader bufferedReader = new BufferedReader(reader);
         String line = bufferedReader.readLine();
         while (line != null) {
-            if (line.equals(" ")){
+            if (line.equals(" ")) {
                 break;
             }
             String[] readsbook = line.split("/");
@@ -68,11 +67,10 @@ public class Notebook {
 
     }//+
 
-
     void writingToFile(List<Note> list) throws IOException {
         outputWriter = new BufferedWriter(new FileWriter(file));
         for (Note note : list) {
-            outputWriter.write(note.toString()+"\n");
+            outputWriter.write(note.toString() + "\n");
 
         }
         outputWriter.flush();
@@ -84,10 +82,10 @@ public class Notebook {
 
         System.out.println("Enter theme");
         String theme = scanner.nextLine();
-        theme=theme+scanner.nextLine();
+        theme = theme + scanner.nextLine();
 
-        if (theme.equals(" ")){
-            theme="empty";
+        if (theme.equals(" ")) {
+            theme = "empty";
         }
         System.out.println("Enter you email ");
         String email;
@@ -103,10 +101,10 @@ public class Notebook {
             }
         }
         System.out.println("Enter message:");
-        String message=scanner.nextLine() ;
-        message= scanner.nextLine();
-        if (message.equals(" ")){
-            message="empty";
+        String message = scanner.nextLine();
+        message = scanner.nextLine();
+        if (message.equals(" ")) {
+            message = "empty";
         }
 
         Date date = new Date();
@@ -122,28 +120,28 @@ public class Notebook {
 
     void noteView(List<Note> list) {
         sortOnDate(list);
-        for (int i=0;i<list.size();i++) {
+        for (int i = 0; i < list.size(); i++) {
 
-            System.out.println("Note "+i+list.get(i).toString(1));
+            System.out.println("Note " + i + list.get(i).toString(1));
         }
     }//+
 
     void search() {
-       int select;
-       while (true) {
-           System.out.println("Select search criteria\n1-mail\n2-theme\n3-date\n4-word in message\n5-theme and word in message");
-           select = scanner.nextInt();
-           if (select<=5&select>0){
-               break;
-           }
-           System.out.println("ERROR Wrong select");
-       }
+        int select;
+        while (true) {
+            System.out.println("Select search criteria\n1-mail\n2-theme\n3-date\n4-word in message\n5-theme and word in message");
+            select = scanner.nextInt();
+            if (select <= 5 & select > 0) {
+                break;
+            }
+            System.out.println("ERROR Wrong select");
+        }
         switch (select) {
-           case  1->searchMail();
-            case 2->searchTheme();
-            case 3->searchDate();
-            case 4->searchWordInMessage();
-            case 5->searchWordAndTheme();
+            case 1 -> searchMail();
+            case 2 -> searchTheme();
+            case 3 -> searchDate();
+            case 4 -> searchWordInMessage();
+            case 5 -> searchWordAndTheme();
 
 
         }
@@ -247,19 +245,20 @@ public class Notebook {
 
 
     }
-    void searchWordAndTheme(){
+
+    void searchWordAndTheme() {
         noteBuffer.clear();
         System.out.println("Enter Theme to search");
         String theme = scanner.next();
         System.out.println("Enter word in message to search");
         String word = scanner.next();
-        for (Note note:noteList){
-            pattern=Pattern.compile(theme);
-            matcher=pattern.matcher(note.getTheme());
-            if (matcher.find()){
-                pattern=Pattern.compile(word);
-                matcher=pattern.matcher(note.getMessage());
-                if(matcher.find()){
+        for (Note note : noteList) {
+            pattern = Pattern.compile(theme);
+            matcher = pattern.matcher(note.getTheme());
+            if (matcher.find()) {
+                pattern = Pattern.compile(word);
+                matcher = pattern.matcher(note.getMessage());
+                if (matcher.find()) {
                     noteBuffer.add(note);
 
                 }
@@ -271,17 +270,20 @@ public class Notebook {
     }
 
     void sortOnDate(List<Note> list) {
-        Collections.sort(list,new SortDate());
+        Collections.sort(list, new SortDate());
     }
-    class SortDate implements Comparator<Note>{
+
+    class SortDate implements Comparator<Note> {
         @Override
         public int compare(Note o1, Note o2) {
-            if (o1.getDate()>o2.getDate()){
-            return 1;}
-            if (o1.getDate()<o2.getDate()){
-            return -1;}
-            else {
-            return 0;}
+            if (o1.getDate() > o2.getDate()) {
+                return 1;
+            }
+            if (o1.getDate() < o2.getDate()) {
+                return -1;
+            } else {
+                return 0;
+            }
 
         }
     }
