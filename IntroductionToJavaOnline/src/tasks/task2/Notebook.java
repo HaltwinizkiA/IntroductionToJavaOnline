@@ -8,24 +8,22 @@ import java.util.regex.Pattern;
 
 public class Notebook {
     private final List<Note> noteList;
-    private final List<Note> noteBuffer;
     private final Scanner scanner;
     private final File file;
 
-    public Notebook() throws IOException {
+    public Notebook() {
         noteList = new ArrayList<Note>();
-        noteBuffer = new ArrayList<Note>();
         scanner = new Scanner(System.in);
         file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task2", "notebook.txt");
         char smile = 0x263A;
-        readingNote();
         System.out.println("Hello user this is NOTEBOOKGOLDEDDISHION " + smile);
 
 
     }
 
-    public void menu() {
-
+    public void menu() throws IOException {
+        List<Note> noteBuffer = new ArrayList<Note>();
+        readingNote();
         int select;
         boolean flag = true;
         while (flag) {
@@ -170,9 +168,7 @@ public class Notebook {
     }
 
     void searchMail() {
-
-        noteBuffer.clear();
-
+        List<Note> noteBuffer = new ArrayList<Note>();
         System.out.println("Enter mail to search");
         String mail;
         while (true) {
@@ -207,7 +203,7 @@ public class Notebook {
     }
 
     void searchTheme() {
-        noteBuffer.clear();
+        List<Note> noteBuffer = new ArrayList<Note>();
         System.out.println("Enter Theme to search");
         String theme = scanner.next();
         Pattern pattern = Pattern.compile(theme);
@@ -228,7 +224,7 @@ public class Notebook {
     }
 
     void searchWordInMessage() {
-        noteBuffer.clear();
+        List<Note> noteBuffer = new ArrayList<Note>();
         System.out.println("Enter word in message to search");
         String word = scanner.next();
         Pattern pattern = Pattern.compile(word);
@@ -250,7 +246,7 @@ public class Notebook {
 
     void searchDate() {
         Matcher matcher;
-        noteBuffer.clear();
+        List<Note> noteBuffer = new ArrayList<Note>();
         String date = " ";
         Pattern validDate = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
         System.out.println("Enter date to search in format year-month-day");
@@ -286,7 +282,7 @@ public class Notebook {
     }
 
     void searchWordAndTheme() {
-        noteBuffer.clear();
+        List<Note> noteBuffer = new ArrayList<Note>();
         System.out.println("Enter Theme to search");
         String theme = scanner.next();
         System.out.println("Enter word in message to search");
