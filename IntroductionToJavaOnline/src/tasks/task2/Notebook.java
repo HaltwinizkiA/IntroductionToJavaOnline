@@ -7,16 +7,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Notebook {
-
-   private List<Note> noteList = new ArrayList<Note>();
-   private List<Note> noteBuffer = new ArrayList<Note>();
-   private Scanner scanner = new Scanner(System.in);
-
-
-
-   private File file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task2", "notebook.txt");
+    private final List<Note> noteList;
+    private final List<Note> noteBuffer;
+    private final Scanner scanner;
+    private final File file;
 
     public Notebook() throws IOException {
+        noteList = new ArrayList<Note>();
+        noteBuffer = new ArrayList<Note>();
+        scanner = new Scanner(System.in);
+        file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task2", "notebook.txt");
         char smile = 0x263A;
         readingNote();
         System.out.println("Hello user this is NOTEBOOKGOLDEDDISHION " + smile);
@@ -24,7 +24,7 @@ public class Notebook {
 
     }
 
-   public void menu()  {
+    public void menu() {
 
         int select;
         boolean flag = true;
@@ -80,6 +80,7 @@ public class Notebook {
     }
 
     void writingToFile(List<Note> list) throws IOException {
+
         BufferedWriter outputWriter = new BufferedWriter(new FileWriter(file));
         for (Note note : list) {
             outputWriter.write(note.toString() + "\n");
@@ -103,7 +104,7 @@ public class Notebook {
         String email;
         while (true) {
             email = scanner.next();
-            Pattern  pattern = Pattern.compile("^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}");//valid mail
+            Pattern pattern = Pattern.compile("^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}");//valid mail
             matcher = pattern.matcher(email);
             if (matcher.find()) {
                 break;
@@ -148,7 +149,7 @@ public class Notebook {
                 if (select <= 5 & select > 0) {
                     break;
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("ERROR pls enter num 1-5\n");
                 scanner.nextLine();
                 continue;
@@ -173,11 +174,23 @@ public class Notebook {
         noteBuffer.clear();
 
         System.out.println("Enter mail to search");
-        String mail = scanner.next();
+        String mail;
+        while (true) {
+            mail = scanner.next();
+            Pattern pattern = Pattern.compile("^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}");//valid mail
+            Matcher matcher = pattern.matcher(mail);
+            if (matcher.find()) {
+                break;
+            } else {
+                scanner.nextLine();
+                System.out.println("ERROR--Wrong email!");
+            }
+        }
+
         Pattern pattern = Pattern.compile(mail);
 
         for (Note note : noteList) {
-            Matcher  matcher = pattern.matcher(note.getEmail());
+            Matcher matcher = pattern.matcher(note.getEmail());
             if (matcher.find()) {
                 noteBuffer.add(note);
 
@@ -197,9 +210,9 @@ public class Notebook {
         noteBuffer.clear();
         System.out.println("Enter Theme to search");
         String theme = scanner.next();
-        Pattern  pattern = Pattern.compile(theme);
+        Pattern pattern = Pattern.compile(theme);
         for (Note note : noteList) {
-            Matcher  matcher = pattern.matcher(note.getTheme());
+            Matcher matcher = pattern.matcher(note.getTheme());
             if (matcher.find()) {
                 noteBuffer.add(note);
 
@@ -218,9 +231,9 @@ public class Notebook {
         noteBuffer.clear();
         System.out.println("Enter word in message to search");
         String word = scanner.next();
-        Pattern  pattern = Pattern.compile(word);
+        Pattern pattern = Pattern.compile(word);
         for (Note note : noteList) {
-            Matcher   matcher = pattern.matcher(note.getMessage());
+            Matcher matcher = pattern.matcher(note.getMessage());
             if (matcher.find()) {
                 noteBuffer.add(note);
 
@@ -250,7 +263,7 @@ public class Notebook {
             }
             System.out.println("wrong date pls enter correct format year-month-day\n(Example 2020-03-17)");
         }
-        Pattern  pattern = Pattern.compile(date);
+        Pattern pattern = Pattern.compile(date);
         for (Note note : noteList) {
             note.getDate();
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -279,8 +292,8 @@ public class Notebook {
         System.out.println("Enter word in message to search");
         String word = scanner.next();
         for (Note note : noteList) {
-            Pattern   pattern = Pattern.compile(theme);
-         Matcher matcher = pattern.matcher(note.getTheme());
+            Pattern pattern = Pattern.compile(theme);
+            Matcher matcher = pattern.matcher(note.getTheme());
             if (matcher.find()) {
                 pattern = Pattern.compile(word);
                 matcher = pattern.matcher(note.getMessage());
@@ -314,7 +327,6 @@ public class Notebook {
         }
     }
 }
-
 
 
 //Задание 2. Блокнот. Разработать консольное приложение, работающее с Заметками
