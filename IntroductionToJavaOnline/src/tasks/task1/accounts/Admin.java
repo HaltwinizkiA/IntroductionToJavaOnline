@@ -25,6 +25,7 @@ public class Admin extends Account {
             }
         }
 
+
     }
 
     private List<Book> modifyLibrary(List<Book> books) {
@@ -73,6 +74,7 @@ public class Admin extends Account {
     }
 
     private List<Book> deleteBook(List<Book> books) {
+        view(books);
         System.out.println("choose num of book");
         int num = scanner.nextInt();
         books.remove(num);
