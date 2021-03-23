@@ -44,7 +44,7 @@ public class Port {
     }
 
     public void portMenu() {
-        boolean flag=true;
+        boolean flag = true;
         while (flag) {
             System.out.println("selected action: \n1- view all Port\n2-view Containers in Port\n3-view all Ships in Port\n4-view Docks in Port\n5-Action with Docks\n6-stop");
             int select = scanner.nextInt();
@@ -54,7 +54,7 @@ public class Port {
                 case 3 -> viewShipsInPort();
                 case 4 -> viewDocksInPort();
                 case 5 -> portAction();
-                case 6 -> flag=false;
+                case 6 -> flag = false;
 
             }
         }
@@ -83,20 +83,19 @@ public class Port {
     private void portAction() {
 
 
-            System.out.println("select Dock dock 0-" + (docks.size() - 1));
-            int selectDock = scanner.nextInt();
-            System.out.println(docks.get(selectDock));
-            if (docks.get(selectDock).getState() == "empty") {
-                System.out.println("select a ship to enter in the dock\n: 0-" + ships.size());
-                viewShipsInPort();
-                int selectShip=scanner.nextInt();
-                docks.get(selectDock).setShip(ships.get(selectShip));
-                ships.remove(selectShip);
-            }
-            else {
-                System.out.println("ship in dock -:  " + docks.get(selectDock).getShip());
-            }
-            containers = docks.get(selectDock).ShipAction(containers);
+        System.out.println("select Dock dock 0-" + (docks.size() - 1));
+        int selectDock = scanner.nextInt();
+        System.out.println(docks.get(selectDock));
+        if (docks.get(selectDock).getState() == "empty") {
+            System.out.println("select a ship to enter in the dock\n: 0-" + ships.size());
+            viewShipsInPort();
+            int selectShip = scanner.nextInt();
+            docks.get(selectDock).setShip(ships.get(selectShip));
+            ships.remove(selectShip);
+        } else {
+            System.out.println("ship in dock -:  " + docks.get(selectDock).getShip());
+        }
+        containers = docks.get(selectDock).ShipAction(containers);
 
     }
 }

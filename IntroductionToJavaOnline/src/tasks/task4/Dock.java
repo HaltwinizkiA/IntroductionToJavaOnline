@@ -6,20 +6,16 @@ import java.util.Scanner;
 public class Dock {
     String state = "empty";
     Ship ship;
-
-    @Override
-    public String toString() {
-        return "Dock{state: " + state +", ship: " + ship +"}";
-    }
-
-    public void setShip(Ship ship) {
-        this.ship = ship;
-    }
-
     Scanner scanner;
+
     public Dock() {
         scanner = new Scanner(System.in);
 
+    }
+
+    @Override
+    public String toString() {
+        return "Dock{state: " + state + ", ship: " + ship + "}";
     }
 
     public String getState() {
@@ -30,6 +26,9 @@ public class Dock {
         return ship;
     }
 
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
 
     public List<Container> ShipAction(List<Container> container) {
 
@@ -44,8 +43,8 @@ public class Dock {
 
 
     public List<Container> unloading(List<Container> containers) {
-        for (Container container:ship.getContainers()){
-        containers.add(container);
+        for (Container container : ship.getContainers()) {
+            containers.add(container);
         }
 
         ship.empty();
@@ -55,7 +54,7 @@ public class Dock {
 
     public void loading(List<Container> container) {
         if (ship.getState() == "empty") {
-         container=ship.addContainer(container);
+            container = ship.addContainer(container);
         } else {
             System.out.println("Ship is full");
         }
