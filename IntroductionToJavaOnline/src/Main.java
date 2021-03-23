@@ -1,14 +1,25 @@
-import java.io.IOException;
-import java.text.ParseException;
+
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ParseException {
-Thread
+    public static void main(String[] args) {
+
 
 
 
 
     }
 
+    protected static class З {
+        String name = "Max";
+        private String state;
+
+        private void setMaksState() {
+            state = "3.14dora$";
+        }
+
+        private void result() {
+            System.out.println(name.equals(state));
+        }
+    }
 }

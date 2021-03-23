@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Deeds>
+    <Deed>
+        <Name>Leha</Name>
+        <Course>4</Course>
+        <Specialty>Electronic</Specialty>
+        <YearOfBirth>1997</YearOfBirth>
+        <Registration>Grodno</Registration>
+    </Deed>
+    <Deed>
+        <Name>neLeha</Name>
+        <Course>2</Course>
+        <Specialty>neElectronic</Specialty>
+        <YearOfBirth>1947</YearOfBirth>
+        <Registration>Minsk</Registration>
+    </Deed>
+    <Deed>
+        <Name>Artem</Name>
+        <Course>8</Course>
+        <Specialty>Philosophy</Specialty>
+        <YearOfBirth>2005</YearOfBirth>
+        <Registration>Dota</Registration>
+    </Deed>
+    <Deed>
+        <Name>Nax</Name>
+        <Course>Prom el</Course>
+        <Specialty>System</Specialty>
+        <YearOfBirth>1996</YearOfBirth>
+        <Registration>Grodno</Registration>
+    </Deed>
+</Deeds>
