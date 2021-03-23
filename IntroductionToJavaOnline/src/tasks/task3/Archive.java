@@ -58,8 +58,8 @@ public class Archive {
             System.out.println("Server is on");
             clientSocket = server.accept();
             System.out.println("User is connected");
-            in = new DataInputStream(clientSocket.getInputStream()); // канал чтения из сокета
-            out = new DataOutputStream(clientSocket.getOutputStream());// канал записи в сокет
+            in = new DataInputStream(clientSocket.getInputStream());
+            out = new DataOutputStream(clientSocket.getOutputStream());
             Archive archive = new Archive();
 
 
