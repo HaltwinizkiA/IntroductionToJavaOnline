@@ -5,15 +5,6 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Train implements Comparable {
-    @Override
-    public String toString() {
-        return "Train{" +
-                "nameOfLastStation='" + nameOfLastStation + '\'' +
-                ", num=" + num +
-                ", time=" + time +
-                '}';
-    }
-
     String nameOfLastStation = "";
     int num;
     int time;
@@ -22,6 +13,15 @@ public class Train implements Comparable {
         this.nameOfLastStation = nameOfLastStation;
         this.num = num;
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "nameOfLastStation='" + nameOfLastStation + '\'' +
+                ", num=" + num +
+                ", time=" + time +
+                '}';
     }
 
     @Override
@@ -54,10 +54,9 @@ public class Train implements Comparable {
         System.out.println("\n");
         Arrays.sort(trains, new SortStation());
         for (int i = 0; i < trains.length; i++) {
-            System.out.println(i+" "+trains[i]);
+            System.out.println(i + " " + trains[i]);
 //            System.out.println(" Train num: " + trains[i].num + " / time: " + trains[i].time + " / Last Station : " + trains[i].nameOfLastStation);
         }
-
 
 
     }
@@ -67,16 +66,17 @@ public class Train implements Comparable {
 
         @Override
         public int compare(Train o1, Train o2) {
-            if(o1.nameOfLastStation.equals(o2.nameOfLastStation)){
-                return o1.time-o2.time;
+            if (o1.nameOfLastStation.equals(o2.nameOfLastStation)) {
+                return o1.time - o2.time;
             }
-            if(o1.nameOfLastStation.compareTo(o2.nameOfLastStation)>0){
+            if (o1.nameOfLastStation.compareTo(o2.nameOfLastStation) > 0) {
                 return 1;
             }
-            if (o1.nameOfLastStation.compareTo(o2.nameOfLastStation)<0){
+            if (o1.nameOfLastStation.compareTo(o2.nameOfLastStation) < 0) {
                 return -1;
-                 }
-            else {return 0;}
+            } else {
+                return 0;
+            }
         }
 
     }

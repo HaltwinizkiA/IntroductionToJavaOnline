@@ -12,10 +12,16 @@ import java.util.regex.Pattern;
 
 public class Account {
 
-    File fileA = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task1//service", "admin.txt");
-    File fileU = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task1//service", "user.txt");
+    private  File fileA ;
+    private  File fileU ;
 
     Scanner scanner = new Scanner(System.in);
+
+    public Account() {
+        fileA = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task1//service", "admin.txt");
+        fileU = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task1//service", "user.txt");
+
+    }
 
     public Account entry() {
         System.out.println("enter login");
@@ -80,7 +86,7 @@ public class Account {
         check = Integer.parseInt(authent[0]);
         if ((name.hashCode()) == check) {
             check = Integer.parseInt(authent[1]);
-            int a=password.hashCode();
+            int a = password.hashCode();
             if (password.hashCode() == check) {
                 System.out.println("Hello " + authent[2] + "your permissions -user " + " name:");
                 return new User();
@@ -122,16 +128,16 @@ public class Account {
 
         }
         boolean flag = true;
-        while (flag){
+        while (flag) {
             System.out.println("select admin mail");
-        int select = scanner.nextInt();
-        if (select>=mails.size()) {
-            System.out.println("wrong num");
-            continue;
+            int select = scanner.nextInt();
+            if (select >= mails.size()) {
+                System.out.println("wrong num");
+                continue;
 
+            }
+            System.out.println(book.toString() + " sent to : " + mails.get(select));
         }
-        System.out.println(book.toString() + " sent to : " + mails.get(select));
-    }
     }
 
     public List<String> getAdminMails() {
@@ -198,7 +204,7 @@ public class Account {
         System.out.println("book search\n" +
                 "Enter the title");
         String title = scanner.next();
-        boolean flag=true;
+        boolean flag = true;
         Pattern pattern = Pattern.compile(title);
         for (int i = 0; i < books.size(); i++) {
             Book cache = books.get(i);
@@ -206,13 +212,13 @@ public class Account {
             if (matcher.find()) {
                 System.out.println("found");
                 System.out.println(i + " : Title: " + books.get(i).getName() + " Page: " + books.get(i).getCountOfPage() + " Type: " + books.get(i).getType());
-                flag=false;
+                flag = false;
 
             }
         }
-        if (flag){
+        if (flag) {
             System.out.println("no such book found");
-        };
+        }
 
     }
 

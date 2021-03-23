@@ -5,6 +5,7 @@ public class Region {
     Area[] area;
     Town capital;
     int s;
+
     public Region(String name) {
         this.name = name;
     }

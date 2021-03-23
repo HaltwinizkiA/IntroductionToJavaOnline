@@ -3,10 +3,17 @@ package tasks.task2;
 import java.text.SimpleDateFormat;
 
 public class Note {
-    Long date;
-    String email="";
-    String theme="";
-    String message="";
+    private final Long date;
+    private String email = "";
+    private String theme = "";
+    private String message = "";
+
+    public Note(Long date, String email, String theme, String message) {
+        this.date = date;
+        this.email = email;
+        this.theme = theme;
+        this.message = message;
+    }
 
     public Long getDate() {
         return date;
@@ -26,16 +33,11 @@ public class Note {
 
     @Override
     public String toString() {
-        return date+"/"+email+"/"+theme+"/"+message;
+        return date + "/" + email + "/" + theme + "/" + message;
     }
+
     public String toString(int a) {
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-        return " Date of creation: "+simpleDateFormat.format(date)+" Email: "+email+"\n"+" Theme: "+theme+"\n Message: "+message;
-    }
-    public Note(Long date, String email, String theme, String message) {
-        this.date = date;
-        this.email = email;
-        this.theme = theme;
-        this.message = message;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return " Date of creation: " + simpleDateFormat.format(date) + " Email: " + email + "\n" + " Theme: " + theme + "\n Message: " + message;
     }
 }

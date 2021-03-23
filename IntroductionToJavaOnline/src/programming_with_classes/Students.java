@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Students {
-    String surname ="";
-    int numOfgroup=0;
-    int[] progress= new int[5];
+    String surname = "";
+    int numOfgroup = 0;
+    int[] progress = new int[5];
 
     public String getSurname() {
         return surname;
@@ -32,13 +32,13 @@ public class Students {
         this.progress = progress;
     }
 
-    public void bestStudents(){
-        double[] grade={};
-        Students[] students=new Students[10];
+    public void bestStudents() {
+        double[] grade = {};
+        Students[] students = new Students[10];
 
-        for (int i=0;i<students.length;i++){
-            Scanner scanner=new Scanner(System.in);
-            students[i]=new Students();
+        for (int i = 0; i < students.length; i++) {
+            Scanner scanner = new Scanner(System.in);
+            students[i] = new Students();
             System.out.println("Enter name");
             students[i].setSurname(scanner.next());
             System.out.println("Enter group");
@@ -47,26 +47,23 @@ public class Students {
 
 
         }
-        for (int i=0;i<students.length;i++){
+        for (int i = 0; i < students.length; i++) {
             Arrays.sort(students[i].progress);
-            if (students[i].progress[0]>=9){
-                System.out.println("Forename : "+students[i].getSurname()+"/  group:  "+students[i].getNumOfgroup());
+            if (students[i].progress[0] >= 9) {
+                System.out.println("Forename : " + students[i].getSurname() + "/  group:  " + students[i].getNumOfgroup());
             }
         }
 
 
-
-
-
-
     }
-    public int[] getNote(){
-        int[] note=new int[5];
+
+    public int[] getNote() {
+        int[] note = new int[5];
         System.out.println("enter five notes:");
-        for (int i=0;i<note.length;i++) {
-            Scanner scanner=new Scanner(System.in);
-            System.out.println("note num: "+(i+1));
-            note[i]=scanner.nextInt();
+        for (int i = 0; i < note.length; i++) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("note num: " + (i + 1));
+            note[i] = scanner.nextInt();
 
         }
         return note;

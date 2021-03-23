@@ -3,11 +3,12 @@ package programming_with_classes;
 import java.util.Scanner;
 
 public class Test1 {
-    double a=0;
-    double b=0;
-    public void output(){
+    double a = 0;
+    double b = 0;
 
-        System.out.println("a: "+a+" b: "+b);
+    public void output() {
+
+        System.out.println("a: " + a + " b: " + b);
     }
 
     public double getA() {
@@ -15,9 +16,9 @@ public class Test1 {
     }
 
     public void setA() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("pls enter a");
-        this.a =scanner.nextDouble();
+        this.a = scanner.nextDouble();
     }
 
     public double getB() {
@@ -25,19 +26,20 @@ public class Test1 {
     }
 
     public void setB() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("pls enter b");
-        this.b =scanner.nextDouble();
+        this.b = scanner.nextDouble();
     }
-    public void sum(){
-        System.out.println("Sum: "+(a+b));
+
+    public void sum() {
+        System.out.println("Sum: " + (a + b));
     }
-    public void comparison(){
-        if(a>b){
-            System.out.println("Hight a: " +a);
-        }
-        else {
-            System.out.println("Hight b: " +b);
+
+    public void comparison() {
+        if (a > b) {
+            System.out.println("Hight a: " + a);
+        } else {
+            System.out.println("Hight b: " + b);
         }
     }
 }

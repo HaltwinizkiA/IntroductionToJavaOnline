@@ -33,24 +33,24 @@ public class Analyzer {
 
         Tag[] tag = new Tag[(int) countOfTag.results().count()];
 
-        String str=text;
+        String str = text;
         Matcher searchTag = Pattern.compile("(?<=\\<)(.*?)(?=\\>)").matcher(str);
 
         int i = 0;
         while (searchTag.find()) {
-            StringBuffer buffer =new StringBuffer();//для восстановления строки в случае повторения тэга и разбития на строки
+            StringBuffer buffer = new StringBuffer();//для восстановления строки в случае повторения тэга и разбития на строки
             String[] newtext;//для хранения сплитанных строк
             String openTag = searchTag.group();//поиск тега
             Matcher chekClosed = Pattern.compile("^/").matcher(openTag);
             if (chekClosed.find()) {
-                Matcher replace=Pattern.compile("</"+openTag+">").matcher(str);
+                Matcher replace = Pattern.compile("</" + openTag + ">").matcher(str);
 
 
                 continue;
             }//проверка на закрывающий;
             Matcher emptyTag = Pattern.compile("/$").matcher(openTag);
             if (emptyTag.find()) {
-                tag[i] = new Tag("empty tag: " +" <"+ openTag+">", "empty", "empty");
+                tag[i] = new Tag("empty tag: " + " <" + openTag + ">", "empty", "empty");
                 i++;
                 continue;
             }// проверка на пустой
@@ -64,19 +64,19 @@ public class Analyzer {
             }
             Matcher chekingId = Pattern.compile("\\d").matcher(openTag);
             if (chekingId.find()) {
-                closeTag=closeTag.substring(0,closeTag.indexOf(" "));
+                closeTag = closeTag.substring(0, closeTag.indexOf(" "));
             }//костыль проверка на цифры в теге
-            openTag="<"+openTag+">";
-            closeTag="<"+closeTag+">";
+            openTag = "<" + openTag + ">";
+            closeTag = "<" + closeTag + ">";
 
-            newtext = newtext[1].split( closeTag );//вырезание тела)
+            newtext = newtext[1].split(closeTag);//вырезание тела)
             tag[i] = new Tag("OPEN TAG : " + openTag, " BODY : " + newtext[0], " CLOSED TAG : " + closeTag);
             i++;
 
 
         }
         for (int f = 0; f < tag.length; f++) {
-            System.out.println("UNIT NUM : " + (f+1) + " " + tag[f].getOpen() + tag[f].getBody() + tag[f].getClose() + "\n");
+            System.out.println("UNIT NUM : " + (f + 1) + " " + tag[f].getOpen() + tag[f].getBody() + tag[f].getClose() + "\n");
         }//вывод;
 
     }

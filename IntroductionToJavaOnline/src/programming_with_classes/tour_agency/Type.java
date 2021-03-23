@@ -5,7 +5,7 @@ public enum Type {
     Relaxation,
     Cruise,
     Therapy,
-    Excursions;
+    Excursions
 
 
 //    public Type getRandom(){

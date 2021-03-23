@@ -27,7 +27,7 @@ public class Triangle {
         y3 = scanner.nextInt();
         a = Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
         b = Math.sqrt((y3 - y2) * (y3 - y2) + (x3 - x2) * (x3 - x2));
-        c=Math.sqrt((y1-y3)*(y1-y3)+(x1-x3)*(x1-x3));
+        c = Math.sqrt((y1 - y3) * (y1 - y3) + (x1 - x3) * (x1 - x3));
         median();
 //        triangle.c = scanner.nextInt();
 
@@ -62,7 +62,6 @@ public class Triangle {
     }
 
 
-
     public double perimetr() {
 
         return a + b + c;
@@ -70,13 +69,15 @@ public class Triangle {
 
     public void median() {
 
-        System.out.println(" Median intersection point  x  : "+medianX()+"  y  : "+medianY());
+        System.out.println(" Median intersection point  x  : " + medianX() + "  y  : " + medianY());
     }
-    public double medianX(){
-        return (x1+x2+x3)/3;
+
+    public double medianX() {
+        return (x1 + x2 + x3) / 3;
     }
-    public double medianY(){
-        return (y1+y2+y3)/3;
+
+    public double medianY() {
+        return (y1 + y2 + y3) / 3;
     }
 
 

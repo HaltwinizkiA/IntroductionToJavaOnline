@@ -233,8 +233,7 @@ public class StringsBasics {
         String str = "Lesha pedik. Max PIDOR! sasha normalnii?";
         int countOfsentence = 0;
         for (int i = 0; i < str.length(); i++) {
-            if (String.valueOf(str.charAt(i)).equals(".") || String.valueOf(str.charAt(i)).equals("!") || String.valueOf(str.charAt(i)).equals("?"))
-            {
+            if (String.valueOf(str.charAt(i)).equals(".") || String.valueOf(str.charAt(i)).equals("!") || String.valueOf(str.charAt(i)).equals("?")) {
                 countOfsentence++;
             }
         }

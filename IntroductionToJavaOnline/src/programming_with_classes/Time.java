@@ -43,7 +43,7 @@ public class Time {
             System.out.println("wrong value ");
             this.min = 0;
         } else {
-            this.min =min;
+            this.min = min;
         }
 
     }
@@ -85,17 +85,15 @@ public class Time {
     }
 
     public int modifTime() {
-        int time=scanner.nextInt();
+        int time = scanner.nextInt();
 
-        if (time<0){
+        if (time < 0) {
             System.out.println("wrong time");
             return 0;
-        }
-            else {
-                return time;
+        } else {
+            return time;
 
         }
-
 
 
     }
@@ -105,8 +103,8 @@ public class Time {
         int modif = scanner.nextInt();
         switch (modif) {
             case 1 -> hours = +scanner.nextInt();
-            case 2->min+=modifTime();
-            case 3->sec+=modifTime();
+            case 2 -> min += modifTime();
+            case 3 -> sec += modifTime();
             default -> System.out.println("wrong time");
         }
     }

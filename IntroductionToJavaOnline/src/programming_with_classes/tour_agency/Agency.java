@@ -5,11 +5,11 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Agency {
-    TravelVoucher[] vouchers = new TravelVoucher[9];
-    Type[] types = Type.values();
-    Place[] places = Place.values();
-    Scanner scanner = new Scanner(System.in);
-    TravelVoucher voucher;
+    private TravelVoucher[] vouchers = new TravelVoucher[9];
+    private final Type[] types = Type.values();
+    private final Place[] places = Place.values();
+    private final Scanner scanner = new Scanner(System.in);
+    private TravelVoucher voucher;
 
     public void initialization() {
         TravelVoucher[] vouchers = createVouch();

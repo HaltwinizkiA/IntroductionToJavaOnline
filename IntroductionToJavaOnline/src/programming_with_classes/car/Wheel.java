@@ -1,6 +1,6 @@
 package programming_with_classes.car;
 
-public  class Wheel {
+public class Wheel {
     String type;
 
     public Wheel(String type) {

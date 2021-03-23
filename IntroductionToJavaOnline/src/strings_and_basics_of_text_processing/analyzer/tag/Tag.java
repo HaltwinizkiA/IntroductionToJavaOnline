@@ -6,7 +6,6 @@ public class Tag {
     String close = "";
 
 
-
     public Tag(String open, String body, String close) {
         this.open = open;
         this.body = body;
@@ -54,7 +53,7 @@ public class Tag {
 //                Tag tag=new Tag(seatchOpenTag.group());
 //            }
 
-    }//ищет в теле имя открывающего тега
+}//ищет в теле имя открывающего тега
 
 //}"<notes>\n" +
 //        " <note id = \"1\">\n" +
