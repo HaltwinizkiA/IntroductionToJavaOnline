@@ -63,16 +63,15 @@ public class Archive {
             Archive archive = new Archive();
 
 
-
         } catch (Exception e) {
             System.out.println(e);
-        }finally {
+        } finally {
             try {
                 in.close();
                 out.close();
                 clientSocket.close();
                 System.out.println("Server closed");
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e);
             }
 
@@ -224,7 +223,6 @@ public class Archive {
                 case 3 -> modifyDeeds();
                 case 4 -> addDeed();
                 case 5 -> startWindows();
-
 
 
             }

@@ -33,7 +33,7 @@ public class Client {
                         break;
                     }
                 }
-                if (a.equals("disconnect")){
+                if (a.equals("disconnect")) {
                     break;
                 }
                 oos.writeUTF(br.readLine());
@@ -47,13 +47,13 @@ public class Client {
 
         } catch (Exception e) {
             System.out.println(e);
-        }finally {
+        } finally {
             try {
                 ois.close();
                 oos.close();
                 clientSocket.close();
                 System.out.println("Client closed");
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e);
             }
         }
