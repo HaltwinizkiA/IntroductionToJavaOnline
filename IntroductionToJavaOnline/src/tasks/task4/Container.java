@@ -1,7 +1,7 @@
 package tasks.task4;
 
 public class Container {
-    String company;
+    private String company;
 
     public Container() {
         int i = (int) (Math.random() * 5 + 1);

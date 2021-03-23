@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Port {
-    List<Dock> docks;
-    List<Container> containers;
-    List<Ship> ships;
-    Scanner scanner;
+    private final List<Dock> docks;
+    private final List<Ship> ships;
+    private final Scanner scanner;
+    private List<Container> containers;
 
     public Port() {
         scanner = new Scanner(System.in);
@@ -46,12 +46,12 @@ public class Port {
     public void portMenu() {
         boolean flag = true;
         while (flag) {
-            System.out.println("selected action: \n1- view all Port\n2-view Containers in Port\n3-view all Ships in Port\n4-view Docks in Port\n5-Action with Docks\n6-stop");
+            System.out.println("selected action: \n1- view all Port\n2-view Containers in Port\n3-view all Ships in queue\n4-view Docks in Port\n5-Action with Docks\n6-stop");
             int select = scanner.nextInt();
             switch (select) {
                 case 1 -> viewPort();
                 case 2 -> viewContainerInPort();
-                case 3 -> viewShipsInPort();
+                case 3 -> viewShipsInQueue();
                 case 4 -> viewDocksInPort();
                 case 5 -> portAction();
                 case 6 -> flag = false;
@@ -66,7 +66,7 @@ public class Port {
         }
     }
 
-    private void viewShipsInPort() {
+    private void viewShipsInQueue() {
         for (int i = 0; i < ships.size(); i++) {
             System.out.println("Num: " + i + " " + ships.get(i));
         }
@@ -88,7 +88,7 @@ public class Port {
         System.out.println(docks.get(selectDock));
         if (docks.get(selectDock).getState() == "empty") {
             System.out.println("select a ship to enter in the dock\n: 0-" + ships.size());
-            viewShipsInPort();
+            viewShipsInQueue();
             int selectShip = scanner.nextInt();
             docks.get(selectDock).setShip(ships.get(selectShip));
             ships.remove(selectShip);

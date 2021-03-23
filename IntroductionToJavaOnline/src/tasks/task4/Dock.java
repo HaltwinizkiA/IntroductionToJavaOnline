@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Dock {
-    String state = "empty";
-    Ship ship;
-    Scanner scanner;
+    private final String state = "empty";
+    private final Scanner scanner;
+    private Ship ship;
 
     public Dock() {
         scanner = new Scanner(System.in);
@@ -42,7 +42,7 @@ public class Dock {
     }
 
 
-    public List<Container> unloading(List<Container> containers) {
+    private List<Container> unloading(List<Container> containers) {
         for (Container container : ship.getContainers()) {
             containers.add(container);
         }
@@ -52,7 +52,7 @@ public class Dock {
         return containers;
     }
 
-    public void loading(List<Container> container) {
+    private void loading(List<Container> container) {
         if (ship.getState() == "empty") {
             container = ship.addContainer(container);
         } else {
