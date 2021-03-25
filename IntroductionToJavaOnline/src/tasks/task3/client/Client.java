@@ -33,7 +33,7 @@ public class Client {
 
                 }
 
-                if (a.equals("disconnect")) {
+                if (a.equals("Goodbye")) {
                     break;
                 }
                 oos.writeUTF(br.readLine());

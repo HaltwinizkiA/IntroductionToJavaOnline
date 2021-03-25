@@ -20,6 +20,8 @@ public class Exit extends IAction {
           File file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task3//server", "enteredAccount.txt");
           BufferedWriter outputWriter = new BufferedWriter(new FileWriter(file));
           outputWriter.write("");
+          out.writeUTF("Goodbye");
+          out.close();
 
 
       }catch (Exception e){

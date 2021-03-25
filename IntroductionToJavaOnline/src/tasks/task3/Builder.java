@@ -25,7 +25,7 @@ public class Builder {
         try {
 
             actionList=new ArrayList<>();
-            actionList.add(0,new Exit());
+            actionList.add(0,new Exit(out));
             actionList.add(1, new StartWindow(in, out));
             out.writeUTF(actionList.get(1).name);
             account=new Account();
