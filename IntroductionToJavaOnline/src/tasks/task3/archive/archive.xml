@@ -28,4 +28,11 @@
         <YearOfBirth>1996</YearOfBirth>
         <Registration>Grodno</Registration>
     </Deed>
+    <Deed>
+        <Name>ogo opyat Leha</Name>
+        <Course>Nu teper 3</Course>
+        <Specialty>Electro Mish</Specialty>
+        <YearOfBirth>1997</YearOfBirth>
+        <Registration>Hrodna</Registration>
+    </Deed>
 </Deeds>

@@ -17,8 +17,6 @@ public class Port {
         containers = new ArrayList<Container>();
         ships = new ArrayList<Ship>();
         shipInPort(5);
-        portMenu();
-
 
     }
 
@@ -79,7 +77,7 @@ public class Port {
             System.out.println("Num: " + i + " " + containers.get(i));
         }
     }
-
+//грузоподъемность порта коробля
     private void portAction() {
 
 
@@ -87,7 +85,7 @@ public class Port {
         int selectDock = scanner.nextInt();
         System.out.println(docks.get(selectDock));
         if (docks.get(selectDock).getState() == "empty") {
-            System.out.println("select a ship to enter in the dock\n: 0-" + ships.size());
+            System.out.println("select a ship to enter in the dock\n: 0-" + (ships.size()-1));
             viewShipsInQueue();
             int selectShip = scanner.nextInt();
             docks.get(selectDock).setShip(ships.get(selectShip));
@@ -95,13 +93,13 @@ public class Port {
         } else {
             System.out.println("ship in dock -:  " + docks.get(selectDock).getShip());
         }
-        containers = docks.get(selectDock).ShipAction(containers);
+        docks.get(selectDock).shipAction(containers);
 
     }
 }
 //Задание 4. Многопоточность. Порт . Корабли заходят в порт для
 //разгрузки/загрузки контейнеров. Число контейнеров, находящихся в текущий момент
-//в порту и на корабле, должно быть неотрицательным и превышающим заданную
+//в порту и на корабле, должно быть неотрицательным и не превышающим заданную
 //грузоподъемность судна и вместимость порта. В порту работает несколько причалов.
 //У одного причала может стоять один корабль. Корабль может загружаться у причала
-//или разгружаться
+//или разгружаться.

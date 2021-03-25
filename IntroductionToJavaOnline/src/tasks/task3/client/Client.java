@@ -1,4 +1,4 @@
-package tasks.task3;
+package tasks.task3.client;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -7,13 +7,11 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class Client {
-
-    private static Socket clientSocket; //сокет для общения
     private static BufferedReader br;
     private static DataOutputStream oos;
     private static DataInputStream ois;
-
-    public static void main(String[] args) {
+    private static Socket clientSocket;
+    public void start() {
 
         try {
             clientSocket = new Socket("localhost", 4004);
@@ -23,23 +21,24 @@ public class Client {
             clientSocket.setSoTimeout(100);
 
             while (true) {
-                String a = "";
+                String a="";
                 while (true) {
                     try {
                         a = ois.readUTF();
-                        Thread.sleep(250);
+                        Thread.sleep(50);
                         System.out.println(a);
                     } catch (Exception e) {
                         break;
                     }
+
                 }
+
                 if (a.equals("disconnect")) {
                     break;
                 }
                 oos.writeUTF(br.readLine());
 
             }
-
 
         } catch (Exception e) {
             System.out.println(e);

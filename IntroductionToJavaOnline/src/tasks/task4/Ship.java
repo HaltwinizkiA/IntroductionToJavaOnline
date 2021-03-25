@@ -5,10 +5,11 @@ import java.util.List;
 
 public class Ship {
     private final Container[] containers;
-    private String state = "loaded";
+    private String state = "loaded";//bolean
 
     public Ship() {
-        containers = new Container[5];
+        int countOfContainer=(int)(Math.random()*10+3);
+        containers = new Container[countOfContainer];
         for (int i = 0; i < containers.length; i++) {
             containers[i] = new Container();
         }

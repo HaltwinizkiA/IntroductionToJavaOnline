@@ -30,7 +30,7 @@ public class Dock {
         this.ship = ship;
     }
 
-    public List<Container> ShipAction(List<Container> container) {
+    public void shipAction(List<Container> container) {
 
         System.out.println("select Ship action: \n1-unloading \n2-loading");
         int select = scanner.nextInt();
@@ -38,21 +38,22 @@ public class Dock {
             case 1 -> unloading(container);
             case 2 -> loading(container);
         }
-        return container;
+
     }
 
-
-    private List<Container> unloading(List<Container> containers) {
+    private void unloading(List<Container> containers) {
         for (Container container : ship.getContainers()) {
             containers.add(container);
         }
 
         ship.empty();
 
-        return containers;
+
     }
 
+
     private void loading(List<Container> container) {
+
         if (ship.getState() == "empty") {
             container = ship.addContainer(container);
         } else {
