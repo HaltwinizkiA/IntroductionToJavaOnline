@@ -11,6 +11,7 @@ public class Client {
     private static DataOutputStream oos;
     private static DataInputStream ois;
     private static Socket clientSocket;
+
     public void start() {
 
         try {
@@ -21,7 +22,7 @@ public class Client {
             clientSocket.setSoTimeout(100);
 
             while (true) {
-                String a="";
+                String a = "";
                 while (true) {
                     try {
                         a = ois.readUTF();

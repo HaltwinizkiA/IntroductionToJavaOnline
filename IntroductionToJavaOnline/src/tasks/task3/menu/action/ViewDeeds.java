@@ -7,9 +7,6 @@ import tasks.task3.api.IAction;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
 import java.io.DataOutputStream;
 import java.io.File;
 
@@ -28,13 +25,13 @@ public class ViewDeeds extends IAction {
             File file = new File("C://Users//37533//EducationJava//IntroductionToJavaOnline//src//tasks//task3//archive", "archive.xml");
             //read
             Document document = documentBuilder.parse(file);
-            XPathFactory xfact = XPathFactory.newInstance();
-            XPath xpath = xfact.newXPath();
-            NodeList empty = (NodeList) xpath.evaluate("//text()[normalize-space(.) = '']", document, XPathConstants.NODESET);
-            for (int i = 0; i < empty.getLength(); i++) {
-                Node node = empty.item(i);
-                node.getParentNode().removeChild(node);
-            }
+//            XPathFactory xfact = XPathFactory.newInstance();
+//            XPath xpath = xfact.newXPath();
+//            NodeList empty = (NodeList) xpath.evaluate("//text()[normalize-space(.) = '']", document, XPathConstants.NODESET);
+//            for (int i = 0; i < empty.getLength(); i++) {
+//                Node node = empty.item(i);
+//                node.getParentNode().removeChild(node);
+//            }
             //view
             Node root = document.getDocumentElement();
             NodeList nodeList = root.getChildNodes();
@@ -51,7 +48,9 @@ public class ViewDeeds extends IAction {
                         }
 
 
+
                     }
+                    out.writeUTF("__________________");
                 }
             }
 
