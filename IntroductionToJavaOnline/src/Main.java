@@ -1,33 +1,19 @@
+import tasks.task4.container.Containter;
+import tasks.task4.container.SortConatiner;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-Action action=new Action();
-action.action();
-    }
-}
-class Action{
-    String a="act";
-    String b="1";
-    public void action(){
-        Pisda pisda=new Pisda(a);
 
-        System.out.println(a);
-        pisda.set(b);
-        System.out.println(b);
-    }
+        List<Containter> containterList=new ArrayList<Containter>();
+        containterList.add(new Containter(10));
+        containterList.add(new Containter(12));
+        containterList.add(new Containter(1));
+        containterList.sort(new SortConatiner());
 
-}
-class Pisda{
-    String a;
-
-    public Pisda(String a) {
-        this.a = a;
-    }
-    public void set(String a){
-        a="123";
-        System.out.println(a);
 
     }
 }
