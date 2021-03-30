@@ -33,20 +33,25 @@ public class Port {
             wait();
         }
         while (this.portWeight >= portMaxWeight) {
-            System.out.println("*UNLOAD*: Not not enough space for containers " + Thread.currentThread().getName() + " waiting ");
-
+            System.out.println("*UNLOAD*: Not  enough space for containers " + Thread.currentThread().getName() + " waiting ");
             wait();
         }
 
         Thread.sleep(2000);
         this.queueUnload.add(ship);
-        for (Containter containter : ship.containterList) {
-            this.containterList.add(containter);
-            if (this.portWeight + containter.getWeight()>portMaxWeight){
-                System.out.println("*UNLOAD*: port storage is full  "+Thread.currentThread().getName()+" waiting. storage:"+portWeight);
-                wait();
+        while (true) {
+            try {
+                if (this.portWeight + ship.getContainterList().get(0).getWeight() > portMaxWeight) {
+                    System.out.println("*UNLOAD*: port storage is full  " + Thread.currentThread().getName() + " waiting. storage:" + portWeight + "/" + portMaxWeight);
+                    wait();
+                    continue;
+                }
+                this.containterList.add(ship.getContainterList().get(0));
+                this.portWeight += ship.getContainterList().get(0).getWeight();
+                ship.getContainterList().remove(0);
+            } catch (Exception e) {
+                break;
             }
-            this.portWeight += containter.getWeight();
 
         }
         System.out.println("*UNLOAD*: " + Thread.currentThread().getName() + " Unload the cargo,Count of ships in dock " + (this.queueUnload.size() - 1) + "");
@@ -65,37 +70,31 @@ public class Port {
         this.queueLoad.add(ship);
         int weightOfContainer = 0;
         this.containterList.sort(new SortConatiner());
-        do {
-
-            for (int i = 0; i < this.containterList.size() - 1; i++) {
-
-                if (ship.capacity == weightOfContainer | this.containterList.get(i).weight + weightOfContainer > ship.capacity) {
+        while (true) {
+            try {
+                if (weightOfContainer + this.containterList.get(0).getWeight() <= ship.getMaxWeight()) {
+                    ship.getContainterList().add(this.containterList.get(0));
+                    this.portWeight -= this.containterList.get(0).getWeight();
+                    this.containterList.remove(0);
+                    weightOfContainer += this.containterList.get(0).getWeight();
+                } else {
                     break;
                 }
-                if (weightOfContainer + this.containterList.get(i).getWeight() <= ship.capacity) {
-                    ship.containterList.add(this.containterList.get(i));
-                    this.portWeight -= this.containterList.get(i).getWeight();
-                    this.containterList.remove(i);
-                    weightOfContainer += this.containterList.get(i).getWeight();
-
-                }
-
-                i--;
-            }
-            if (this.containterList.size() == 1) {
+            } catch (Exception e) {
                 System.out.println("*LOAD*: not container in port. " + Thread.currentThread().getName() + " waiting in Dock");
                 wait();
-
             }
-        } while (this.containterList.get(this.containterList.size() - 1).weight + weightOfContainer <= ship.capacity);
-
+        }
         this.queueLoad.remove(ship);
-        System.out.println("*LOAD*: " + Thread.currentThread().getName() + " loaded, capacity : " + weightOfContainer + "/" + ship.capacity + " current queue:" + queueLoad.size() +
+        System.out.println("*LOAD*: " + Thread.currentThread().getName() + " loaded, capacity : " + weightOfContainer + "/" + ship.getMaxWeight() + " current queue:" + queueLoad.size() +
                 "\n Count of containers in port: " + (this.containterList.size() - 1));
+        System.out.println("Remainder of weight in port: " + portWeight + "/" + portMaxWeight);
         notifyAll();
 
     }
 }
+
+
 //Задание 4. Многопоточность. Порт . Корабли заходят в порт для
 //разгрузки/загрузки контейнеров. Число контейнеров, находящихся в текущий момент
 //в порту и на корабле, должно быть неотрицательным и не превышающим заданную

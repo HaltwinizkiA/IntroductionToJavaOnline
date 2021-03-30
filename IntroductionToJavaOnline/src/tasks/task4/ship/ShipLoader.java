@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public class ShipLoader extends Ship {
 
 
-    public ShipLoader(Port port, int capacity) {
+    public ShipLoader(Port port, int maxWeight) {
         this.port = port;
-        containterList = new ArrayList<>();
-        this.capacity = capacity;
+        setContainterList(new ArrayList<>()) ;
+        setMaxWeight(maxWeight);
     }
 
     @Override

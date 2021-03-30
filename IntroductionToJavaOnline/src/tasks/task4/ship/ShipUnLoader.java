@@ -10,9 +10,9 @@ public class ShipUnLoader extends Ship {
 
     public ShipUnLoader(int countOfContainer, Port port, Containter containter) {
         this.port = port;
-        containterList = new ArrayList<>();
+        setContainterList(new ArrayList<>());
         for (int i = 0; i <=countOfContainer; i++) {
-            containterList.add(containter);
+            getContainterList().add(containter);
         }
 
 
