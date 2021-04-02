@@ -33,7 +33,7 @@ public class StringsBasics {
     }
 
     public void countOfNumbers() {
-        String str = "i like 3 action in sex 1 dogstyle 2 blowjob and 69";
+        String str = "i like 3 action in  life: 1-eat 2 2-sleep and learning";
         Pattern pattern = Pattern.compile("\\d");
 //        Matcher matcher=pattern.matcher(str);     //new metod java9+;
 //        System.out.println((int) matcher.results().count());//new metod java9+
@@ -50,7 +50,7 @@ public class StringsBasics {
     }
 
     public void countOfNum() {
-        String str = "i like 3 action in sex 1 dogstyle 2 blowjob and 69";
+        String str = "i like 3 action in  life: 1-eat 2 2-sleep and learning";
         Pattern pattern = Pattern.compile("\\d");
         int count = 0;
         String[] strarr = str.split("\s");// old;
@@ -109,7 +109,7 @@ public class StringsBasics {
     }
 
     public void symbolBafterA() {
-        String str = "pisos alizi arbuz asskiller bigboobs sasiloh";
+        String str = "dog aasd lina adekiller kropas ololoalola";
         System.out.println(str);
         StringBuffer strb = new StringBuffer();
         String[] strarr = str.split("");
@@ -129,7 +129,7 @@ public class StringsBasics {
 
     public void palindrom() {
 
-        StringBuffer s = new StringBuffer("СОСОС");
+        StringBuffer s = new StringBuffer("SOSОS");
         StringBuffer rev = new StringBuffer(s).reverse();
 
         if ((s.toString()).equals(rev.toString())) {
@@ -151,7 +151,7 @@ public class StringsBasics {
     }
 
     public void doubleSimbol() {
-        String str = "NAKAMOTO IDI NAHUI SO SVOIM bitkom";
+        String str = "NAKAMOTO IDI ODTSUDA SO SVOIM bitkom";
         StringBuffer stringBuffer = new StringBuffer(str);
         StringBuffer strb = new StringBuffer();
         for (int i = 0; i < stringBuffer.length(); i++) {
@@ -186,7 +186,7 @@ public class StringsBasics {
     }
 
     public void bigWord() {
-        String str = "i have big balls and biget  cock";
+        String str = "i have big legs and biget  knife";
         String maxword = "";
         String[] strarr = str.split(" ");
         for (String word : strarr) {
@@ -200,7 +200,7 @@ public class StringsBasics {
             if (maxword.length() == max.length()) {
                 i++;
                 if (i == 2) {
-                    System.out.println("pizda vashei hate uberai");
+                    System.out.println("clean pls");
                     break;
 
                 }
@@ -230,7 +230,7 @@ public class StringsBasics {
     }
 
     public void punctuationMarks() {
-        String str = "Lesha pedik. Max PIDOR! sasha normalnii?";
+        String str = "Lesha medik. Max kozel! sasha normalnii?";
         int countOfsentence = 0;
         for (int i = 0; i < str.length(); i++) {
             if (String.valueOf(str.charAt(i)).equals(".") || String.valueOf(str.charAt(i)).equals("!") || String.valueOf(str.charAt(i)).equals("?")) {
