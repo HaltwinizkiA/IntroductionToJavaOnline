@@ -1,5 +1,5 @@
-# EducationJava
-
+Education Java
+___________________________________________________________________________________________________________________________________________________________________________________
 
 [Algoritmization](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/algoritmization)
 
