@@ -8,7 +8,5 @@ public enum Type {
     Excursions
 
 
-//    public Type getRandom(){
-//        return values();
-//    }
+
 }

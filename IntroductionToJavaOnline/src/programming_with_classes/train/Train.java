@@ -55,7 +55,7 @@ public class Train implements Comparable {
         Arrays.sort(trains, new SortStation());
         for (int i = 0; i < trains.length; i++) {
             System.out.println(i + " " + trains[i]);
-//            System.out.println(" Train num: " + trains[i].num + " / time: " + trains[i].time + " / Last Station : " + trains[i].nameOfLastStation);
+
         }
 
 
@@ -82,9 +82,3 @@ public class Train implements Comparable {
     }
 }
 
-//Создайте класс Train, содержащий поля: название пункта назначения, номер поезда, время отправления.
-//Создайте данные в массив из пяти элементов типа Train, добавьте возможность сортировки элементов массива по
-//номерам поездов. Добавьте возможность вывода информации о поезде, номер которого введен пользователем.
-
-//Добавьте возможность сортировки массив по пункту назначения, причем поезда с одинаковыми пунктами
-//назначения должны быть упорядочены по времени отправления.

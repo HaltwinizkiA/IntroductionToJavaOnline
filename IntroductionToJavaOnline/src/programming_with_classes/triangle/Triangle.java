@@ -29,7 +29,7 @@ public class Triangle {
         b = Math.sqrt((y3 - y2) * (y3 - y2) + (x3 - x2) * (x3 - x2));
         c = Math.sqrt((y1 - y3) * (y1 - y3) + (x1 - x3) * (x1 - x3));
         median();
-//        triangle.c = scanner.nextInt();
+
 
 
         return triangle;
@@ -41,7 +41,7 @@ public class Triangle {
 
             double h = Math.sqrt((a * a) - ((c * c) / 4));
             return (c * h) / 2;
-        }//3 случая равнобедренного треугольника.
+        }
         if (c == b) {
             double h = Math.sqrt((c * c) - ((a * a) / 4));
             return (a * h) / 2;
@@ -52,7 +52,7 @@ public class Triangle {
         }
         if (a == c & c == b) {
             return (Math.sqrt(3) / 4) * Math.pow(2, 2);
-        }//равносторонний
+        }
         else {
             double h = 2 * perimetr() / a;
             double p = perimetr() / 2;
@@ -82,5 +82,3 @@ public class Triangle {
 
 
 }
-//7. Описать класс, представляющий треугольник. Предусмотреть методы для создания объектов, вычисления
-//площади, периметра и точки пересечения медиан.

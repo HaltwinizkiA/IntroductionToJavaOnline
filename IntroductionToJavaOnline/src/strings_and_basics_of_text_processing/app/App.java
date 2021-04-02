@@ -105,7 +105,7 @@ public class App {
             return (int) (pattern.matcher(o1).results().count() - pattern.matcher(o2).results().count());
 
         }
-    }//соритровка абзацей по кол-ву предложений
+    }
 
     class SortSentenceWord implements Comparator<String> {
 
@@ -113,7 +113,7 @@ public class App {
         public int compare(String o1, String o2) {
             return o1.length() - o2.length();
         }
-    }// соритровка слов по длине
+    }
 
     class SortInputLexemeAlphavit implements Comparator<String> {
         String letter = "о";
@@ -146,7 +146,7 @@ public class App {
 
         }
 
-    }//сортировка по алфавивуту в случае равенства кол-валексем
+    }
 
     class SortInputLexeme implements Comparator<String> {
         String letter = " ";
@@ -168,10 +168,5 @@ public class App {
 
         }
 
-    }  //сортировка по количеству входных лексем по убыв
+    }
 }
-
-//1. Cоздать приложение, разбирающее текст (текст хранится в строке) и позволяющее выполнять с текстом три различных
-//        операции: отсортировать абзацы по количеству предложений; в каждом предложении отсортировать слова по длине;
-//        отсортировать лексемы в предложении по убыванию количества вхождений заданного символа, а в случае равенства – по
-//        алфавиту.

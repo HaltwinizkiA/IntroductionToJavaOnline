@@ -13,26 +13,6 @@ public class Bureau {
     }
 
     public void createCustomer() {
-//        for (int i=0;i<customer.length;i++){
-//            Scanner scanner=new Scanner(System.in);
-//            System.out.println("enter client  in client base");
-//            System.out.println("name:");
-//            customer[i]=new Customer();
-//            customer[i].setName(scanner.next());
-//            System.out.println("surname:");
-//            customer[i].setSurName(scanner.next());
-//            System.out.println("patronymic:");
-//            customer[i].setPatronymic(scanner.next());
-//            System.out.println("adress:");
-//            customer[i].setAdress(scanner.next());
-//            System.out.println("banknum:");
-//            customer[i].setBankNum(scanner.nextInt());
-//            System.out.println("cardnum:");
-//            customer[i].setCardNum(scanner.nextInt());
-//
-//
-//        }
-
         customer[0] = new Customer();
         customer[1] = new Customer();
         customer[2] = new Customer();
@@ -108,10 +88,3 @@ public class Bureau {
         }
     }
 }
-//8. Создать класс Customer, спецификация которого приведена ниже. Определить конструкторы, set- и get- методы
-//и метод toString(). Создать второй класс, агрегирующий массив типа Customer, с подходящими конструкторами
-//и методами. Задать критерии выбора данных и вывести эти данные на консоль.
-//Класс Customer: id, фамилия, имя, отчество, адрес, номер кредитной карточки, номер банковского счета.
-//Найти и вывести:
-//a) список покупателей в алфавитном порядке;
-//b) список покупателей, у которых номер кредитной карточки находится в заданном интервале

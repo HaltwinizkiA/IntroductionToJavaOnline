@@ -18,7 +18,7 @@ public enum NameOfTreasure {
     helmet,
     heart,
     horse,
-    ;
+
 
 
 }

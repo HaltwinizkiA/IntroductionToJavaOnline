@@ -84,4 +84,3 @@ public class Admin extends Account {
     }
 
 }
-//login admin  password qwerty
