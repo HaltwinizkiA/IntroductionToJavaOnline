@@ -1,4 +1,4 @@
-package programming_with_classes;
+package programming_with_classes.test1;
 
 import java.util.Scanner;
 

@@ -100,20 +100,20 @@ public class Decomposition {
         Scanner scanner = new Scanner(System.in);
         int count = scanner.nextInt();
         int[] area = new int[count];
-        for(int i=0;i<area.length;i++){
-            area[i]= (int) (Math.random() * 40) +1;
+        for (int i = 0; i < area.length; i++) {
+            area[i] = (int) (Math.random() * 40) + 1;
         }
-        double maxDistance=Math.sqrt((Math.pow(area[2]-area[0],2)+Math.pow(area[3]-area[1],2)));
-        for(int i=0;i<area.length-7;i++){
-            if (Math.sqrt((Math.pow(area[i+2]-area[i],2)+Math.pow(area[i+3]-area[i+1],2)))>Math.sqrt((Math.pow(area[i+6]-area[i+4],2)+Math.pow(area[i+7]-area[i+5],2))))
-            {
+        double maxDistance = Math.sqrt((Math.pow(area[2] - area[0], 2) + Math.pow(area[3] - area[1], 2)));
+        for (int i = 0; i < area.length - 7; i++) {
+            if (Math.sqrt((Math.pow(area[i + 2] - area[i], 2) + Math.pow(area[i + 3] - area[i + 1], 2))) > Math.sqrt((Math.pow(area[i + 6] - area[i + 4], 2) + Math.pow(area[i + 7] - area[i + 5], 2)))) {
 
-                maxDistance=Math.sqrt((Math.pow(area[i+2]-area[i],2)+Math.pow(area[i+3]-area[i+1],2)));
+                maxDistance = Math.sqrt((Math.pow(area[i + 2] - area[i], 2) + Math.pow(area[i + 3] - area[i + 1], 2)));
 
             }
         }
-return maxDistance;
+        return maxDistance;
     }
+
     public int secondLargest() {
         System.out.println("Enter count of dot ==/2");
         Scanner scanner = new Scanner(System.in);
@@ -133,7 +133,6 @@ return maxDistance;
         }
         return secondmax;
     }
-
 
 
 }

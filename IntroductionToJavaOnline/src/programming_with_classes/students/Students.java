@@ -1,4 +1,4 @@
-package programming_with_classes;
+package programming_with_classes.students;
 
 import java.util.Arrays;
 import java.util.Scanner;

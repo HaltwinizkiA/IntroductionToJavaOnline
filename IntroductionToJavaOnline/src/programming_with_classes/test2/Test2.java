@@ -1,4 +1,4 @@
-package programming_with_classes;
+package programming_with_classes.test2;
 
 public class Test2 {
     double a;
