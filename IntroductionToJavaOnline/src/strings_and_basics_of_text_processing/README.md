@@ -8,7 +8,7 @@
 Крайние пробелы в строке удалить.
 
 
-[Работа со строкой как с объектом типа String или StringBuilder]
+[Работа со строкой как с объектом типа String или StringBuilder](https://github.com/crptbosyak/EducationJava/blob/main/IntroductionToJavaOnline/src/strings_and_basics_of_text_processing/StringsBasics.java)
 
 1. Дан текст (строка). Найдите наибольшее количество подряд идущих пробелов в нем.
 2. В строке вставить после каждого символа 'a' символ 'b'.
