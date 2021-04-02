@@ -1,5 +1,5 @@
 # EducationJava
-#Algoritmization
+#[Algoritmization](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/algoritmization)
 #String and Basic of text processings
 #Programming with Class
 #Basic of OOP
