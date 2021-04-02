@@ -37,10 +37,6 @@ public class Branching {
 
     }
 
-    public void threeDot() {
-
-
-    }
 
     public void brick() {
         Scanner scanner = new Scanner(System.in);
