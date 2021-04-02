@@ -1,4 +1,4 @@
-[Introduction to Java](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline)
+[Introduction to Java](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src)
 
 This is homework of online course Introduction to Java
 ___________________________________________________________________________________________________________________________________________________________________________________
