@@ -1,4 +1,4 @@
-Education Java
+#[Introduction to Java](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline)
 ___________________________________________________________________________________________________________________________________________________________________________________
 
 [Algoritmization](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/algoritmization)
