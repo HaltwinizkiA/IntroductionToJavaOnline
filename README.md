@@ -10,7 +10,7 @@
 [Basic of OOP](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/basics_of_OOP)
 
 
-Tasks
+[Tasks](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/tasks)
 
 [task 1](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/tasks/task1)
 
