@@ -1,4 +1,6 @@
 [Introduction to Java](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline)
+
+This is homework of online course Introduction to Java
 ___________________________________________________________________________________________________________________________________________________________________________________
 
 [Algoritmization](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/algoritmization)
