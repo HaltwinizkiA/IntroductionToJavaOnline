@@ -3,11 +3,11 @@ ________________________________________________________________________________
 
 [Algoritmization](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/algoritmization)
 
-[String and Basic of text processings](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/strings_and_basics_of_text_processing)
+[String and Basic of text processings](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/strings/and/basics/of/text/processing)
 
-[Programming with Class](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/programming_with_classes)
+[Programming with Class](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/programming/with/classes)
 
-[Basic of OOP](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/basics_of_OOP)
+[Basic of OOP](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/basics/of/oop)
 
 
 [Tasks:](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/tasks)
