@@ -1,4 +1,4 @@
-import strings_and_basics_of_text_processing.StringsBasics;
+import strings.and.basics.of.text.processing.StringsBasics;
 
 public class Main {
 
