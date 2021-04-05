@@ -22,5 +22,5 @@ ________________________________________________________________________________
 
 [task 4](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/tasks/task4)
 
-[questions](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/Questions)
+[questions](https://github.com/crptbosyak/EducationJava/tree/main/IntroductionToJavaOnline/src/questions)
 
